@@ -28,6 +28,6 @@ jobs:
         
       - name: Publish
         run: >
-          dotnet nuget push PackageUtils.${{ github.ref_name }}.nupkg 
+          dotnet nuget push Anki.NET.${{ github.ref_name }}.nupkg 
           -s https://nuget.pkg.github.com/sirush/index.json 
           -k ${{ secrets.PACKAGE }}
