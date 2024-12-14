@@ -30,22 +30,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="CollectionFile\Database\Sql\CardsTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\sql\CardsTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\Sql\ColTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\sql\ColTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\Sql\GravesTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\sql\GravesTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\Sql\Indexes.sql">
+    <EmbeddedResource Include="CollectionFile\Database\sql\Indexes.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\Sql\NotesTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\sql\NotesTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\Sql\RevLogTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\sql\RevLogTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
