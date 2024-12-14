@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using System.Text;
+using Microsoft.Data.Sqlite;
 
 namespace AnkiNet.CollectionFile.Database;
 
@@ -8,9 +9,7 @@ internal abstract class SqliteRepository<T>
 
     protected abstract string TableName { get; }
     protected abstract IReadOnlyList<string> Columns { get; }
-
     protected abstract IReadOnlyList<object> GetValues(T item);
-
 
     protected abstract T Map(SqliteDataReader reader);
 
@@ -51,43 +50,44 @@ internal abstract class SqliteRepository<T>
             return;
         }
 
-        string writeSqlQuery;
+        var columnNamesString = string.Join(",", Columns);
+        var parametersPerRow = Columns.Count;
+
+        var placeholderBuilder = new StringBuilder();
+        for (int i = 0; i < parametersPerRow; i++)
         {
-            var values = Enumerable.Range(0, items.Count).Select(itemIndex =>
-            {
-                var @params = Enumerable.Range(0, Columns.Count).Select(paramIndex => ParamName(itemIndex, paramIndex));
-
-                return $"({string.Join(',', @params)})";
-            });
-
-            writeSqlQuery = $"INSERT INTO {TableName} ({string.Join(",", Columns)}) VALUES {string.Join(',', values)}";
+            placeholderBuilder.Append($"@p{i},");
         }
 
-        try
-        {
-            await using var command = new SqliteCommand(writeSqlQuery, _connection);
+        placeholderBuilder.Length--; // Remove the last comma
+        var placeholder = $"({placeholderBuilder})";
 
-            foreach (var (item, itemIndex) in items.Select((item, itemIndex) => (item, itemIndex)))
+        var insertStatement = $"INSERT INTO {TableName} ({columnNamesString}) VALUES {placeholder}";
+
+        using var transaction = _connection.BeginTransaction();
+
+        await using var command = new SqliteCommand(insertStatement, _connection, transaction);
+
+        var parameters = new List<SqliteParameter>();
+        for (int i = 0; i < parametersPerRow; i++)
+        {
+            parameters.Add(new SqliteParameter { ParameterName = $"@p{i}" });
+        }
+
+        command.Parameters.AddRange(parameters);
+
+        foreach (var item in items)
+        {
+            var itemValues = GetValues(item);
+
+            for (int i = 0; i < itemValues.Count; i++)
             {
-                var itemValues = GetValues(item);
-                foreach (var (itemValue, paramIndex) in itemValues.Select((itemValue, paramIndex) => (itemValue, paramIndex)))
-                {
-                    var paramName = ParamName(itemIndex, paramIndex);
-                    command.Parameters.AddWithValue(paramName, itemValue);
-                }
+                command.Parameters[i].Value = itemValues[i] ?? DBNull.Value;
             }
 
-            var numberOfItemsInserted = await command.ExecuteNonQueryAsync();
-        }
-        catch (Exception e)
-        {
-            throw new IOException($"Cannot Add {typeof(T).Name}", e);
+            await command.ExecuteNonQueryAsync();
         }
 
-        #region Helper function(s)
-
-        static string ParamName(int itemIndex, int paramIndex) => $"@p{itemIndex}_{paramIndex}";
-
-        #endregion
+        transaction.Commit();
     }
 }
