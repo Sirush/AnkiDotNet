@@ -23,11 +23,11 @@ jobs:
         
       - name: Package
         run: >
-          dotnet pack --no-restore --no-build --configuration Release 
+          dotnet pack src/AnkiNet/AnkiNet.csproj --no-restore --no-build --configuration Release 
           -p:PackageVersion=${{ github.ref_name }} --output .
         
       - name: Publish
         run: >
           dotnet nuget push PackageUtils.${{ github.ref_name }}.nupkg 
           -s https://nuget.pkg.github.com/sirush/index.json 
-          -k ${{ secrets.Package }}
+          -k ${{ secrets.PACKAGE }}
