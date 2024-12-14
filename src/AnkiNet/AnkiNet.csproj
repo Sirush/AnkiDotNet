@@ -58,13 +58,4 @@
   <ItemGroup>
     <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="CollectionFile\Database\Sql\CardsTable.sql" />
-    <None Remove="CollectionFile\Database\Sql\ColTable.sql" />
-    <None Remove="CollectionFile\Database\Sql\GravesTable.sql" />
-    <None Remove="CollectionFile\Database\Sql\Indexes.sql" />
-    <None Remove="CollectionFile\Database\Sql\NotesTable.sql" />
-    <None Remove="CollectionFile\Database\Sql\RevLogTable.sql" />
-  </ItemGroup>
 </Project>
