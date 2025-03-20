@@ -13,7 +13,7 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 
     <PackageId>Anki.NET</PackageId>
-    <PackageVersion>2.1.0</PackageVersion>
+    <PackageVersion>2.1.1</PackageVersion>
     <Authors>Lysrt,Clement-Jean,Sirus</Authors>
     <Description>A fork of the original Anki.NET from Lysrt with better performance on large decks creation.
 Anki.NET allows you to create Anki decks and cards from your C# application.</Description>
