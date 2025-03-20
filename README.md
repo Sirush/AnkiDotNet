@@ -32,6 +32,7 @@ await AnkiFileWriter.WriteToFileAsync("MyCollection.apkg", collection);
 ## Acknowledgement
 
 Anki.NET is a fork form the the archived [AnkiSharp](https://github.com/AnkiTools/AnkiSharp) project from [Clement-Jean](https://github.com/Clement-Jean). Thanks a lot for the hard work!
+This is a fork of [Anki.NET by lysrt](https://github.com/lysrt/Anki.NET) modified by [jonnydee](https://github.com/jonnydee/AnkiDotNet) with .NET 9 support and better performanced on large collections.
 
 ## Usage
 

@@ -14,8 +14,9 @@
 
     <PackageId>Anki.NET</PackageId>
     <PackageVersion>2.1.0</PackageVersion>
-    <Authors>Lysrt,Clement-Jean</Authors>
-    <Description>Anki.NET allows you to create Anki decks and cards from your C# application.</Description>
+    <Authors>Lysrt,Clement-Jean,Sirus</Authors>
+    <Description>A fork of the original Anki.NET from Lysrt with better performance on large decks creation.
+Anki.NET allows you to create Anki decks and cards from your C# application.</Description>
     <PackageTags>anki deck decks card cards</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageProjectUrl>https://github.com/Sirush/AnkiDotNet</PackageProjectUrl>
