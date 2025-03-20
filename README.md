@@ -1,7 +1,7 @@
 ﻿# Anki.NET
 
-[![NuGet](https://img.shields.io/nuget/v/Anki.NET.svg)](https://www.nuget.org/packages/Anki.NET)
-[![NuGet](https://img.shields.io/nuget/dt/Anki.NET.svg)](https://www.nuget.org/packages/Anki.NET)
+[![NuGet](https://img.shields.io/nuget/v/Sirus.Anki.NET.svg)](https://www.nuget.org/packages/Sirus.Anki.NET)
+[![NuGet](https://img.shields.io/nuget/dt/Sirus.Anki.NET.svg)](https://www.nuget.org/packages/Sirus.Anki.NET)
 
 Create and export Anki collections, decks, notes and cards from your C# applications.
 
@@ -32,6 +32,7 @@ await AnkiFileWriter.WriteToFileAsync("MyCollection.apkg", collection);
 ## Acknowledgement
 
 Anki.NET is a fork form the the archived [AnkiSharp](https://github.com/AnkiTools/AnkiSharp) project from [Clement-Jean](https://github.com/Clement-Jean). Thanks a lot for the hard work!
+
 This is a fork of [Anki.NET by lysrt](https://github.com/lysrt/Anki.NET) modified by [jonnydee](https://github.com/jonnydee/AnkiDotNet) with .NET 9 support and better performanced on large collections.
 
 ## Usage

@@ -12,7 +12,7 @@
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 
-    <PackageId>Anki.NET</PackageId>
+    <PackageId>Sirus.Anki.NET</PackageId>
     <PackageVersion>2.1.1</PackageVersion>
     <Authors>Lysrt,Clement-Jean,Sirus</Authors>
     <Description>A fork of the original Anki.NET from Lysrt with better performance on large decks creation.
