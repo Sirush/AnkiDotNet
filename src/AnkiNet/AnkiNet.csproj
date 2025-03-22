@@ -13,7 +13,7 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
 
     <PackageId>Sirus.Anki.NET</PackageId>
-    <PackageVersion>2.1.1</PackageVersion>
+    <PackageVersion>2.1.2</PackageVersion>
     <Authors>Lysrt,Clement-Jean,Sirus</Authors>
     <Description>A fork of the original Anki.NET from Lysrt with better performance on large decks creation.
 Anki.NET allows you to create Anki decks and cards from your C# application.</Description>
@@ -31,22 +31,22 @@ Anki.NET allows you to create Anki decks and cards from your C# application.</De
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="CollectionFile\Database\sql\CardsTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\Sql\CardsTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\sql\ColTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\Sql\ColTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\sql\GravesTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\Sql\GravesTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\sql\Indexes.sql">
+    <EmbeddedResource Include="CollectionFile\Database\Sql\Indexes.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\sql\NotesTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\Sql\NotesTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="CollectionFile\Database\sql\RevLogTable.sql">
+    <EmbeddedResource Include="CollectionFile\Database\Sql\RevLogTable.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
