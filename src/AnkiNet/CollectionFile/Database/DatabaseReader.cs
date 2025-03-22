@@ -37,7 +37,7 @@ internal sealed class DatabaseReader
             conn = new SqliteConnection($"Data Source={dbFile};");
             conn.Open();
             
-            var col = ReadResource("AnkiNet.CollectionFile.Database.ql.ColTable.sql");
+            var col = ReadResource("AnkiNet.CollectionFile.Database.Sql.ColTable.sql");
             var notes = ReadResource("AnkiNet.CollectionFile.Database.Sql.NotesTable.sql");
             var cards = ReadResource("AnkiNet.CollectionFile.Database.Sql.CardsTable.sql");
             var revLogs = ReadResource("AnkiNet.CollectionFile.Database.Sql.RevLogTable.sql");
